@@ -2,7 +2,15 @@
     padding-top: 70px;
 }
 
+.runner-background {
+    background-image: "images/runner.jpg";
+}
+
 .pre {
   white-space: pre;
+}
+
+.jumbotron {
+    margin-top: 90px;
 }
 
