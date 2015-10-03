@@ -12,23 +12,13 @@
             </div>
 
             <!-- Daily statistics -->
-            {{#each days}}
+            {{#each sessiondata}}
                 <div class="col-sm-12">
                     <h3>{{date}}</h3>
                 </div>
                 <div class="col-sm-8">
-                    {{#each session day=id }}
-                        <div class="col-sm-12">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    {{start}} - {{end}} {{activity}}
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="{{activity_value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity_value}}%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    {{#each sessions}}
+                        {{> activityDashboardSessionList}}
                     {{/each}}
                 </div>
                 <div class="col-sm-4">
@@ -44,6 +34,20 @@
                     </div>
                 </div>
             {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="activityDashboardSessionList">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{formatDate start}} - {{formatDate end}} {{activity}}
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{activity_value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{activity_value}}%;">
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
