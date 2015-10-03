@@ -13,10 +13,10 @@
     <h2>Activity for {{text}}</h2>
     <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <img src="/images/{{image}}" alt="{{text}}" class="img-rounded img-responsive activity-image">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-2">
             {{> activitySlider}}
             {{> nextactivity}}
         </div>
@@ -25,17 +25,23 @@
 </template>
 
 <template name="activitySlider">
-    <label for="ambition">Ambition</label>
-    <div class="form-group" id="ambition-slider">
-        <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+    <div class="form-group">
+        <label for="ambition">Ambition</label>
+        <div id="ambition-slider">
+            <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+        </div>
     </div>
-    <label for="regularity">Regularity</label>
-    <div class="form-group" id="regularity-slider">
-        <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+    <div class="form-group">
+        <label for="regularity">Regularity</label>
+        <div id="regularity-slider">
+            <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+        </div>
     </div>
-    <label for="randomness">Randomness</label>
-    <div class="form-group" id="randomness-slider">
-        <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+    <div class="form-group">
+        <label for="randomness">Randomness</label>
+        <div id="randomness-slider">
+            <input type="text" class="slider" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+        </div>
     </div>
 </template>
 
