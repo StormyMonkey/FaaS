@@ -36,6 +36,11 @@
     text-shadow: 0.5px 0.5px #989898;
 }
 
+.jumbotron label {
+    color: rgb(249,249,249);
+    text-shadow: 0.5px 0.5px #989898;
+}
+
 .panel {
     background: rgba(134, 148, 147, 0.81);
 }
