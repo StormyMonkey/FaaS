@@ -8,5 +8,11 @@ Template.header.helpers({
         });
 
         return active && 'active';
+    },
+    userSignedIn: function (){
+        if (!!Meteor.userId()){
+            return true;
+        }
+        return false;
     }
 });
