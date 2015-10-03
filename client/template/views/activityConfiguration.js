@@ -6,4 +6,12 @@ if (Meteor.isClient) {
         return activity;
       }
     })
+
+    Template.activitySlider.rendered = function() {
+        // Anything here will get executed right when the template
+        // is finished rendering.
+        $('#ambition-slider').slider();
+        $('#regularity-slider').slider();
+        $('#randomness-slider').slider();
+    };
 }
