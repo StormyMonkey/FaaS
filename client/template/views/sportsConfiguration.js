@@ -3,6 +3,10 @@ if (Meteor.isClient) {
         activities: function() {
             return Activity.find({}).map( function(activity, index) {
                 activity.nr = index;
+
+                if (index == 0) {
+                    activity.active = 'active';
+                }
                 return activity;
             });
         },
