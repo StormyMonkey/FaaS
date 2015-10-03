@@ -18,8 +18,4 @@ if (Activity.find().count() === 0) {
         text: "skating",
         image: "skate.gif",
     });
-    Activity.insert({
-        text: "hiking",
-        image: "walk.gif",
-    });
 }
