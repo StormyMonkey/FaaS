@@ -1,0 +1,102 @@
+.body {
+    padding-top: 70px;
+}
+
+.full-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.runner-background {
+    background-image: url("images/runner.jpg");
+    background-attachment: fixed;
+    overflow: overlay;
+}
+
+.pre {
+  white-space: pre;
+}
+
+.nav-button:hover {
+    background-color: rgb(210, 208, 208);
+}
+
+.img-icon-small {
+    height: 45px;
+    vertical-align: middle;
+}
+
+.nav-bar-spacer {
+    min-height: 80px;
+}
+
+h1 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+h2 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+h3 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+label {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(20,20,20,0.5);
+}
+
+.jumbotron {
+    margin-top: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(134, 148, 147, 0.31);
+    overflow: overlay;
+}
+
+.jumbotron h1 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+.jumbotron p {
+    color: rgb(249,249,249);
+}
+
+.jumbotron label {
+    color: rgb(249,249,249);
+}
+
+.panel {
+    background: rgba(181, 195, 194, 0.35);
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-shadow {
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+.progress-bar {
+    background-color: rgb(44, 191, 44)
+}
+
+.activity-image {
+    width: 300px;
+}
+
+.activity-image-overview {
+    width: 150px;
+}
+
+.footer {
+    margin-top: 13px;
+}
