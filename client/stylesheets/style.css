@@ -24,6 +24,10 @@
     vertical-align: middle;
 }
 
+.nav-bar-spacer {
+    min-height: 80px;
+}
+
 .jumbotron {
     margin-top: 90px;
     padding-left: 10px;
