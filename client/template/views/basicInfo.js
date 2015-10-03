@@ -14,7 +14,7 @@ if (Meteor.isClient) {
             var basic_information = {
                 birthdate: birthdate,
                 weight: weight,
-                gender: "w",
+                gender: "m",
             }
 
             console.log(basic_information);
@@ -39,10 +39,9 @@ if (Meteor.isClient) {
     });
 
     Template.basicInfo.helpers({
-            basicinfo: function() {
+        basicinfo: function() {
             var users = Meteor.users;
             var usr = users.findOne(Meteor.userId);
-            console.log(usr);
             return usr;
         }
     });
