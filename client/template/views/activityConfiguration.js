@@ -14,4 +14,14 @@ if (Meteor.isClient) {
         $('#regularity-slider').slider();
         $('#randomness-slider').slider();
     };
+
+    if (Meteor.isClient) {
+        Template.activitySlider.events({
+            "submit form": function (event) {
+                event.preventDefault();
+                FlowRouter.go('/activityconfiguration');
+            }
+        });
+    }
+
 }

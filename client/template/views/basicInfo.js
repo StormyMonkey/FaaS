@@ -14,7 +14,7 @@ if (Meteor.isClient) {
             var basic_information = {
                 birthdate: birthdate,
                 weight: weight,
-                gender: "m",
+                gender: gender,
             }
 
             console.log(basic_information);
