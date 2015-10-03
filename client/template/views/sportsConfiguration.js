@@ -12,11 +12,12 @@ if (Meteor.isClient) {
         },
     });
 
-    Meteor.startup(function() {
-        var slider = new Slider('#ex1', {
-            formatter: function(value) {
-                return 'Current value: ' + value;
-            }
-        });
-    });
+    Template.sportsConfiguration.rendered = function() {
+        // Anything here will get executed right when the template
+        // is finished rendering.
+        $('#ambition-slider').slider();
+        $('#regularity-slider').slider();
+        $('#randomness-slider').slider();
+    };
+
 }
