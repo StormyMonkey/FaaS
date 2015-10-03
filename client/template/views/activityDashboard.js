@@ -2,23 +2,53 @@
 if (Meteor.isClient) {
     Template.activityDashboard.rendered = function () {
         $("#engine-switch").bootstrapSwitch();
+        if($("#switch-state").prop('checked', true)){
+            Session.set('privacyEngine', 'yes');
+        }else{
+            Session.set('privacyEngine', 'no');
+        }
     };
 }
 
 Template.activityDashboard.helpers({
     sessiondata: function() {
-        var dates = ActivityData.find({
-            type: 'session'
-        }, {sort: { start: -1}}).map(function(session) {
-            return moment(session.start).format('LL');
-        });
+        var dates;
+        var isRealData;
+        console.log(Session.get('privacyEngine'));
+        if(Session.get('privacyEngine') === false
+            || Session.get('privacyEngine') === 'yes'){
+            isRealData = 1;
+        }else{
+            isRealData = 0;
+        }
+        console.log(Session.get('privacyEngine'));
+        if(isRealData){
+            dates = ActivityData.find({
+                    type: 'session'
+                }, 
+                {   
+                    sort: { start: -1}
+                }).map(function(session) {
+                return moment(session.start).format('LL');
+            });
+        }else{
+            dates = ActivityData.find({
+                    type: 'session',
+                fake: isRealData
+                }, 
+                {   
+                    sort: { start: -1}
+                }).map(function(session) {
+                return moment(session.start).format('LL');
+            });
+        }
         console.log("dates: ", dates);
         dates = _.uniq(dates);
         sessions = _.map(dates, function(value, index) {
             return {
                 date: value,
                 id: index,
-                sessions: getSessions(value)
+                sessions: getSessions(value, isRealData)
             }
         });
         console.log('Sessions to report back to html');
@@ -52,6 +82,23 @@ Template.activityDashboard.helpers({
         } else {
             return false;
         }
+    },
+    isPrivacyEngine: function() {
+        if(Session.get('privacyEngine') === 'yes'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+});
+
+Template.activityDashboard.events({
+    'change #switch-state' : function(event){
+        if(event.currentTarget.checked){
+            Session.set('privacyEngine', 'yes');
+        }else{
+            Session.set('privacyEngine', 'no');
+        }
     }
 });
 
@@ -64,10 +111,15 @@ Template.activityDashboardSessionList.helpers({
 });
 
 
-getSessions = function(day) {
+getSessions = function(day, isRealData) {
     console.log("day");
     console.log(day);
-    var sessionsCursor = ActivityData.find({type: 'session'});
+    var sessionsCursor;
+    if(isRealData){
+        sessionsCursor = ActivityData.find({type: 'session'});
+    }else{
+        sessionsCursor = ActivityData.find({type: 'session', fake: 0});        
+    }
     var sessionsArray = new Array();
     sessionsCursor.forEach(function(session){
         if(moment(session.start).format('LL') === day){
