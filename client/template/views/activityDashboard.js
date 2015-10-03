@@ -14,7 +14,7 @@ Template.activityDashboard.helpers({
             day['date'] = '12.03.2015';
             days.push(day);
             day  = new Object();
-            day['id']   = 1;
+            day['id']   = 2;
             day['date'] = '11.03.2015';
             days.push(day);
             console.log("days");
@@ -44,7 +44,27 @@ Template.activityDashboard.helpers({
             console.log(sessions);
             return sessions;
         },
-        pie : function() {
+        circularOptions : function() {
+            console.log("Graph circular Options");
+            console.log(this);
+            return {
+                'canvasSize': 250,
+                'arcWidth': 10,
+                'sessionValueKey': 'progressValue',
+                'tweenDuration': 300,
+                //'outerDivClass': 'dailyGraphOuter'+this.id,
+                'innerDivClass': 'dailyGraph'+this.id,
+                'containerId': 'dailyGraph'+this.id,
+                'sessionValueKey': 'dailyGraphValue'+this.id,
+                'sessionTextKey': 'dailiyGraphText'+this.id,
+            }
+        },
+        fillGraph : function(id) {
+            console.log("Fill graph");
+            console.log(id);
+            Session.set('dailyGraphValue'+id.id, 8);
+        }
+        /*pie : function() {
             console.log("PieChart");
             // TODO get all sessions for this day
             
@@ -87,5 +107,5 @@ Template.activityDashboard.helpers({
                     ]
                 }]
             };
-        },
+        },*/
 });

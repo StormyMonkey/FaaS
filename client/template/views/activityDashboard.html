@@ -31,8 +31,13 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{> highchartsHelper chartId=id day="{{this}}" chartObject=pie}}
+                        <div class="panel-body" id="dailyGraph{{id}}">
+                            <div class="dailyGraph{{id}}">
+                                {{#with circularOptions date=date}}
+                                    {{> circularProgress}}
+                                {{/with}}
+                                {{fillGraph date_id=id}}
+                            </div>
                         </div>
                     </div>
                 </div>
