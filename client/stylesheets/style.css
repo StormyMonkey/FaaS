@@ -30,6 +30,11 @@
     min-height: 80px;
 }
 
+h3 {
+    color: rgb(255,255,255);
+    text-shadow: 0.5px 0.5px #989898;
+}
+
 .jumbotron {
     margin-top: 90px;
     padding-left: 10px;
@@ -52,7 +57,7 @@
 }
 
 .panel {
-    background: rgba(134, 148, 147, 0.81);
+    background: rgba(181, 195, 194, 0.35);
 }
 
 .center-block {
@@ -63,6 +68,10 @@
 
 .text-shadow {
     text-shadow: 0.5px 0.5px #989898;
+}
+
+.progress-bar {
+    background-color: rgb(44, 191, 44)
 }
 
 .activity-image {

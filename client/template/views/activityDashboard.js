@@ -31,51 +31,13 @@ Template.activityDashboard.helpers({
                 'innerDivClass': 'dailyGraph'+this.id,
                 'containerId': 'dailyGraph'+this.id,
                 'sessionValueKey': 'dailyGraphValue'+this.id,
-                'sessionTextKey': 'dailiyGraphText'+this.id,
+                'sessionTextKey': 'dailyGraphText'+this.id,
             }
         },
-        /*pie : function() {
-            console.log("PieChart");
-            // TODO get all sessions for this day
-
-            console.log(this);
-            return {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                },
-                width: "100",
-                height: "100",
-                title: {
-                    text: null
-                },
-                tooltip: {
-                    pointFormat: '<b>{point.percentage:.1f}%</b>'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: false,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                            style: {
-                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                            },
-                            connectorColor: 'silver'
-                        }
-                    }
-                },
-                series: [{
-                    type: 'pie',
-                    //name: 'genre',
-                    data: [
-                        ['running'         ,   45.0],
-                        ['walk'            ,      26.0],
-                        ['no activity',          29.0]
-                    ]
-                }]
-            };
-        },*/
+        fillGraph : function(data) {
+            console.log("Fill graph");
+            console.log(data.hash.date_id);
+            Session.set('dailyGraphValue'+data.hash.date_id, 8);
+            Session.set('dailyGraphText'+data.hash.date_id, 'Progress');
+        },
 });
