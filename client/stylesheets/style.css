@@ -2,8 +2,14 @@
     padding-top: 70px;
 }
 
+.full-page {
+    width: 100vw;
+    height: 100vh;
+}
+
 .runner-background {
-    background-image: "images/runner.jpg";
+    margin-left: -20px;
+    background-image: url("/images/runner.jpg");
 }
 
 .pre {
