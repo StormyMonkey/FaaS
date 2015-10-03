@@ -44,3 +44,7 @@
 .panel {
     background: rgba(134, 148, 147, 0.81);
 }
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}

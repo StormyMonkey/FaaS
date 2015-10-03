@@ -4,42 +4,59 @@
             <div class="col-sm-11">
                 <div class="jumbotron">
                     <h1>Steady...</h1>
+                    <form>
+                        <div class="form-group">
 
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                {{#each sports}} {{> sport}} {{/each}}
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    {{#each sports}} {{> sport}} {{/each}}
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
 
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </div>
+                        <label for="ambition">Ambition</label>
+                        <div class="form-group">
+                            <input id="slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+                        </div>
+                        <label for="regularity">Regularity</label>
+                        <div class="form-group">
+                            <input id="slider1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+                        </div>
+                        <label for="randomness">Randomness</label>
+                        <div class="form-group">
+                            <input id="slider2" data-slider-id='sliderRandom' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+                        </div>
+                    </form>
                 </div>
                 <div class="col-sm-1"></div>
             </div>
         </div>
-    </div>
 </template>
 
 <template name="sport">
     <div class="item {{active}}">
         {{text}}
     </div>
+</template>
+
+<template name="sportIndicators">
+    <li data-target="#myCarousel" data-slide-to="{{nr}}" class="active"></li>
 </template>
