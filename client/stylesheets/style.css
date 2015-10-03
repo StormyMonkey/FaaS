@@ -9,6 +9,8 @@
 
 .runner-background {
     background-image: url("images/runner.jpg");
+    background-attachment: fixed;
+    overflow: overlay;
 }
 
 .pre {
