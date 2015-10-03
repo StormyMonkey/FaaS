@@ -14,5 +14,9 @@ Template.header.helpers({
             return true;
         }
         return false;
+    },
+    userIcon: function(){
+        var user = Meteor.user();
+        return user.services.google.picture;
     }
 });

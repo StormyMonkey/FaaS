@@ -19,6 +19,15 @@
     background-color: rgb(210, 208, 208);
 }
 
+.img-icon-small {
+    height: 45px;
+    vertical-align: middle;
+}
+
+.nav-bar-spacer {
+    min-height: 80px;
+}
+
 .jumbotron {
     margin-top: 90px;
     padding-left: 10px;
@@ -33,12 +42,10 @@
 
 .jumbotron p {
     color: rgb(249,249,249);
-    text-shadow: 0.5px 0.5px #989898;
 }
 
 .jumbotron label {
     color: rgb(249,249,249);
-    text-shadow: 0.5px 0.5px #989898;
 }
 
 .panel {
@@ -49,6 +56,10 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.text-shadow {
+    text-shadow: 0.5px 0.5px #989898;
 }
 
 .activity-image {
