@@ -8,8 +8,7 @@
 }
 
 .runner-background {
-    margin-left: -20px;
-    background-image: url("/images/runner.jpg");
+    background-image: url("images/runner.jpg");
 }
 
 .pre {
@@ -18,5 +17,8 @@
 
 .jumbotron {
     margin-top: 90px;
+    margin-left: -70px;
+    margin-right: 49px;
+    background: rgba(134, 148, 147, 0.31);
 }
 
