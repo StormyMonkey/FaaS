@@ -59,6 +59,11 @@ Template.activityDashboard.helpers({
                 'sessionTextKey': 'dailiyGraphText'+this.id,
             }
         },
+        fillGraph : function(id) {
+            console.log("Fill graph");
+            console.log(id);
+            Session.set('dailyGraphValue'+id.id, 8);
+        }
         /*pie : function() {
             console.log("PieChart");
             // TODO get all sessions for this day
