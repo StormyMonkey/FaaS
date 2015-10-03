@@ -22,6 +22,8 @@ twbs:bootstrap
 sacha:spin
 fortawesome:fontawesome
 momentjs:moment
-iron:router
 ejson
 votercircle:winston
+kadira:blaze-layout
+arillo:flow-router-helpers
+kadira:flow-router

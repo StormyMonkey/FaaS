@@ -2,7 +2,33 @@
     padding-top: 70px;
 }
 
+.full-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.runner-background {
+    background-image: url("images/runner.jpg");
+}
+
 .pre {
   white-space: pre;
+}
+
+.jumbotron {
+    margin-top: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(134, 148, 147, 0.31);
+}
+
+.jumbotron h1 {
+    color: rgb(255,255,255);
+    text-shadow: 0.5px 0.5px #989898;
+}
+
+.jumbotron p {
+    color: rgb(249,249,249);
+    text-shadow: 0.5px 0.5px #989898;
 }
 
