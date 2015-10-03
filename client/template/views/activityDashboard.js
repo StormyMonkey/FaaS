@@ -25,8 +25,8 @@ Template.activityDashboard.helpers({
         if(isRealData){
             dates = ActivityData.find({
                     type: 'session'
-                }, 
-                {   
+                },
+                {
                     sort: { start: -1}
                 }).map(function(session) {
                 return moment(session.start).format('LL');
@@ -35,8 +35,8 @@ Template.activityDashboard.helpers({
             dates = ActivityData.find({
                     type: 'session',
                 fake: isRealData
-                }, 
-                {   
+                },
+                {
                     sort: { start: -1}
                 }).map(function(session) {
                 return moment(session.start).format('LL');
@@ -45,14 +45,16 @@ Template.activityDashboard.helpers({
         console.log("dates: ", dates);
         dates = _.uniq(dates);
         sessions = _.map(dates, function(value, index) {
+            var sessions = getSessions(value, isRealData)
+            var activityvalues = _.pluck(sessions, 'activity_value');
+            var daily =  _.reduce( activityvalues , function(sum, num){ return sum + num; }, 0);
             return {
                 date: value,
                 id: index,
-                sessions: getSessions(value, isRealData)
+                sessions: sessions,
+                dailyActivity: daily
             }
         });
-        console.log('Sessions to report back to html');
-        console.log(sessions);
         return sessions;
     },
     circularOptions: function() {
@@ -71,9 +73,7 @@ Template.activityDashboard.helpers({
         }
     },
     fillGraph: function(data) {
-        //console.log("Fill graph");
-        //console.log(data.hash.date_id);
-        Session.set('dailyGraphValue' + data.hash.date_id, 8);
+        Session.set('dailyGraphValue' + data.hash.date_id, data.hash.progress);
         Session.set('dailyGraphText' + data.hash.date_id, 'Progress');
     },
     isValidSession: function(session) {
@@ -118,7 +118,7 @@ getSessions = function(day, isRealData) {
     if(isRealData){
         sessionsCursor = ActivityData.find({type: 'session'});
     }else{
-        sessionsCursor = ActivityData.find({type: 'session', fake: 0});        
+        sessionsCursor = ActivityData.find({type: 'session', fake: 0});
     }
     var sessionsArray = new Array();
     sessionsCursor.forEach(function(session){
