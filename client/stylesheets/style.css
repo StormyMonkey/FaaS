@@ -19,6 +19,11 @@
     background-color: rgb(210, 208, 208);
 }
 
+.img-icon-small {
+    height: 45px;
+    vertical-align: middle;
+}
+
 .jumbotron {
     margin-top: 90px;
     padding-left: 10px;

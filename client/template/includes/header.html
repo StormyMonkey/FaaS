@@ -22,6 +22,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}}
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if userSignedIn}}
+                        <img src="{{userIcon}}" alt="userIcon" class="img-circle img-icon-small">
+                    {{/if}}
+                </ul>
             </div>
         </div>
     </nav>
