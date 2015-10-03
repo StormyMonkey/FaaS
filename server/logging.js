@@ -45,3 +45,4 @@ var consoleOptions = {
 };
 
 logger.addTransport('console', consoleOptions);
+logger.info("logging to console initalized");
