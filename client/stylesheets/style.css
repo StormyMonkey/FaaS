@@ -30,9 +30,24 @@
     min-height: 80px;
 }
 
+h1 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+h2 {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
 h3 {
     color: rgb(255,255,255);
-    text-shadow: 0.5px 0.5px #989898;
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
+}
+
+label {
+    color: rgb(255,255,255);
+    text-shadow: 0.0px 0.0px 3px rgba(20,20,20,0.5);
 }
 
 .jumbotron {
@@ -45,7 +60,7 @@ h3 {
 
 .jumbotron h1 {
     color: rgb(255,255,255);
-    text-shadow: 0.5px 0.5px #989898;
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
 }
 
 .jumbotron p {
@@ -67,7 +82,7 @@ h3 {
 }
 
 .text-shadow {
-    text-shadow: 0.5px 0.5px #989898;
+    text-shadow: 0.0px 0.0px 3px rgba(30,30,30,0.3);
 }
 
 .progress-bar {
