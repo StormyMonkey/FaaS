@@ -1,0 +1,43 @@
+<template name="activityConfiguration">
+    <div class="full-page runner-background">
+        <div class="container-fluid">
+            <div class="jumbotron">
+                {{#with activity}} {{> activityConfig}} {{/with}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="activityConfig">
+    <h1>Steady...</h1>
+    <h2>Activity for {{text}}</h2>
+    <div class="row">
+
+        <div class="col-sm-4">
+            <img src="/images/{{image}}" alt="{{text}}" class="img-rounded img-responsive activity-image">
+        </div>
+        <div class="col-sm-4">
+            {{> activitySlider}}
+            {{> nextactivity}}
+        </div>
+    </div>
+
+</template>
+
+<template name="activitySlider">
+    <label for="ambition">Ambition</label>
+    <div class="form-group">
+        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" /> </div>
+    <label for="regularity">Regularity</label>
+    <div class="form-group">
+        <input id="slider2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+    </div>
+    <label for="randomness">Randomness</label>
+    <div class="form-group">
+        <input id="slider3" data-slider-id='sliderRandom' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+    </div>
+</template>
+
+<template name="nextactivity">
+
+</template>
