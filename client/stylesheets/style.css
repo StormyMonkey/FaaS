@@ -45,6 +45,13 @@
     background: rgba(134, 148, 147, 0.81);
 }
 
-#ex1Slider .slider-selection {
-	background: #BABABA;
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sport-image {
+    width: 300px;
+    height: 300px;
 }

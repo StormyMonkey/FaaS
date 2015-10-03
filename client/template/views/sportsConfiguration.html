@@ -8,12 +8,13 @@
                         <div class="form-group">
 
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                </ol>
+
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                {{#each sports}}
+                                    {{> sportIndicators}}
+                                {{/each}}
+                            </ol>
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
@@ -33,15 +34,14 @@
                         </div>
                         <label for="ambition">Ambition</label>
                         <div class="form-group">
-                            <input id="slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
-                        </div>
+                            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>                        </div>
                         <label for="regularity">Regularity</label>
                         <div class="form-group">
-                            <input id="slider1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+                            <input id="slider2" data-slider-id='ex2Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
                         </div>
                         <label for="randomness">Randomness</label>
                         <div class="form-group">
-                            <input id="slider2" data-slider-id='sliderRandom' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14" />
+                            <input id="slider3" data-slider-id='sliderRandom' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
                         </div>
                     </form>
                 </div>
@@ -53,10 +53,10 @@
 
 <template name="sport">
     <div class="item {{active}}">
-        {{text}}
+        <img src="/images/{{image}}" alt="{{text}}" class="img-rounded center-block img-responsive sport-image">
     </div>
 </template>
 
 <template name="sportIndicators">
-    <li data-target="#myCarousel" data-slide-to="{{nr}}" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="{{nr}}"></li>
 </template>
