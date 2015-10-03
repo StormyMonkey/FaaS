@@ -9,12 +9,10 @@ if (Meteor.isClient) {
 
             var birthdate = event.target.birthdate.value;
             var weight = event.target.weight.value;
-            var gender = event.target.gender;
 
             var basic_information = {
                 birthdate: birthdate,
                 weight: weight,
-                gender: gender,
             }
 
             console.log(basic_information);
@@ -27,22 +25,35 @@ if (Meteor.isClient) {
                     // Clear form
                     event.target.birthdate = "";
                     event.target.weight = "";
-                    event.target.gender = "";
-
                     // Prevent default form submit
                     return false;
                 }
             });
 
             FlowRouter.go('/activityconfiguration');
+        },
+        "click #gender-male": function(e) {
+            Meteor.call("setGender", 'm', function(error, result){
+                if(error){
+                    return Errors.throw(error.reason);
+                }
+            });
+        },
+        "click #gender-female": function(e) {
+            Meteor.call("setGender", 'f', function(error, result){
+                if(error){
+                    return Errors.throw(error.reason);
+                }
+            });
         }
     });
 
     Template.basicInfo.helpers({
         basicinfo: function() {
-            var users = Meteor.users;
-            var usr = users.findOne(Meteor.userId);
-            return usr;
+            return Meteor.users.findOne(Meteor.userId);;
+        },
+        isMale: function(gender) {
+            return gender === 'm';
         }
     });
 }
