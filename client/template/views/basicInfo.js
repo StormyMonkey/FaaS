@@ -1,36 +1,49 @@
-Template.basicInfo.events({
+if (Meteor.isClient) {
 
-    "submit form": function (event) {
-        event.preventDefault();
+    Template.basicInfo.events({
 
-        console.log(event);
+        "submit form": function (event) {
+            event.preventDefault();
 
-        var birthdate = event.target.birthdate.value;
-        var weight = event.target.weight.value;
-        var gender = event.target.gender;
+            console.log(event);
 
-        var basic_information = {
-            birthdate: birthdate,
-            weight: weight,
-            gender: "w",
+            var birthdate = event.target.birthdate.value;
+            var weight = event.target.weight.value;
+            var gender = event.target.gender;
+
+            var basic_information = {
+                birthdate: birthdate,
+                weight: weight,
+                gender: "w",
+            }
+
+            console.log(basic_information);
+
+            Meteor.call("updateBasicInformation", basic_information, function(error, result){
+                if(error){
+                    return Errors.throw(error.reason);
+                }
+                else {
+                    // Clear form
+                    event.target.birthdate = "";
+                    event.target.weight = "";
+                    event.target.gender = "";
+
+                    // Prevent default form submit
+                    return false;
+                }
+            });
+
+            FlowRouter.go('/activityconfiguration');
         }
-        console.log(basic_information);
+    });
 
-        Meteor.call("updateBasicInformation", basic_information, function(error, result){
-            if(error){
-                return Errors.throw(error.reason);
-            }
-            else {
-                // Clear form
-                event.target.birthdate = "";
-                event.target.weight = "";
-                event.target.gender = "";
-
-                // Prevent default form submit
-                return false;
-            }
-        });
-
-        FlowRouter.go('/activityconfiguration');
-    }
-});
+    Template.basicInfo.helpers({
+            basicinfo: function() {
+            var users = Meteor.users;
+            var usr = users.findOne(Meteor.userId);
+            console.log(usr);
+            return usr;
+        }
+    });
+}
