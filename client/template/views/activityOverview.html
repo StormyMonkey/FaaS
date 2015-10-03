@@ -1,0 +1,22 @@
+<template name="activityOverview">
+    <div class="full-page runner-background">
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1>Choose Your Activities</h1>
+                {{#each activities}} {{> activityelements}} {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="activityelements">
+    <div class="col-sm-2">
+        <div class="activity-switch" id="activity-switch-{{_id}}">
+            <input id="switch-state" data-size="mini" type="checkbox" {{checked}}>
+        </div>
+
+        <a href={{pathFor 'activityConfiguration' id=_id }}>
+            <img src="/images/{{image}}" alt="{{text}}" class="img-rounded img-responsive activity-image-overview">
+        </a>
+    </div>
+</template>

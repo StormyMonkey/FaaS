@@ -33,6 +33,7 @@
     padding-left: 10px;
     padding-right: 10px;
     background: rgba(134, 148, 147, 0.31);
+    overflow: overlay;
 }
 
 .jumbotron h1 {
@@ -64,4 +65,8 @@
 
 .activity-image {
     width: 300px;
+}
+
+.activity-image-overview {
+    width: 150px;
 }
