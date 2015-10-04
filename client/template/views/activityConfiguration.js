@@ -13,6 +13,8 @@ if (Meteor.isClient) {
         $('#ambition-slider').slider();
         $('#regularity-slider').slider();
         $('#randomness-slider').slider();
+
+
     };
 
     if (Meteor.isClient) {
